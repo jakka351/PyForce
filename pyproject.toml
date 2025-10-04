@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "j2534diag"
+version = "0.1.0"
+description = "J2534 Diagnostic Software with FORScan-like GUI"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "You" }]
+dependencies = [
+  "pywin32; platform_system=='Windows'",   # for winreg on some envs (optional)
+]
+
+[project.scripts]
+j2534diag = "j2534diag.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
